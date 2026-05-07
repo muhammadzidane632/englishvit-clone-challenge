@@ -1,20 +1,15 @@
 {{-- navbar mobile --}}
-<nav class="md:hidden bg-primary-8 p-[10px]" id="navbar-mobile">
-    <div class="flex items-center justify-between w-full">
+<nav class="md:hidden bg-primary-8" id="navbar-mobile">
+    <div class="px-ev-3 py-ev-3 flex justify-between items-center bg-primary-8">
 
         {{-- logo --}}
         <a href="{{ url('/') }}" aria-label="Beranda">
-            <img
-                src="{{ asset('assets/icons/englishvit-logo.svg') }}"
-                alt="Englishvit"
-                class="h-[38px] w-[160px]">
+            <img src="{{ asset('assets/icons/englishvit-logo.svg') }}" alt="Englishvit" class="h-ev-logo-mob w-auto">
         </a>
 
         {{-- kanan: tombol masuk + hamburger --}}
         <div class="flex items-center gap-2">
-            <a href="{{ url('/login') }}"
-               id="btn-masuk-mobile"
-               class="text-white text-sm font-semibold px-2 py-1 rounded-[6px] bg-info-7 hover:bg-blue-500 transition-colors">
+            <a href="{{ url('/login') }}" class="text-white text-ev-body-sm font-semibold px-ev-3 py-ev-2 rounded-ev-sm bg-info-7 hover:bg-blue-500 transition-colors mr-3">
                 Masuk
             </a>
 
