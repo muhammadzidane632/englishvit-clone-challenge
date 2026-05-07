@@ -1,5 +1,5 @@
 {{-- section pilihan program --}}
-<section class="py-ev-5 md:py-ev-7 mt-ev-8">
+<section class="py-ev-5 md:py-ev-7 mt-ev-4">
     <div class="container max-w-ev-container mx-auto px-4 md:px-6">
         
         {{-- judul section --}}
