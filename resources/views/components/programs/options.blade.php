@@ -1,55 +1,55 @@
 {{-- section pilihan program --}}
-<section class="py-[20px] md:py-[40px] mt-[50px]">
-    <div class="container max-w-[1140px] mx-auto px-1 md:px-6">
+<section class="py-ev-5 md:py-ev-7 mt-ev-8">
+    <div class="container max-w-ev-container mx-auto px-4 md:px-6">
         
         {{-- judul section --}}
-        <div class="text-center mb-[30px]">
-            <h2 class="text-xl md:text-2xl font-semibold text-black-8">
+        <div class="text-center mb-ev-6">
+            <h2 class="text-ev-body-lg md:text-ev-h4 font-semibold text-black-8">
                 Pilihan Program Belajar di Englishvit
             </h2>
         </div>
 
-        {{-- grid menu program --}}
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-[10px] w-full">
+        {{-- container flex/grid --}}
+        <div class="grid grid-cols-2 lg:flex lg:flex-row gap-ev-2 md:gap-ev-3 w-full">
             
             {{-- 1. live class --}}
-            <a href="#live-class" class="group h-full">
-                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-[10px] p-[8px] md:p-[10px] rounded-lg shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors h-full">
-                    <img src="{{ asset('assets/images/sections/live.webp') }}" alt="Live Class" class="h-[42px] w-auto object-contain shrink-0">
-                    <div>
-                        <p class="text-sm md:text-base font-bold text-black-8 leading-tight mb-1">Live Class</p>
-                        <p class="text-xs md:text-sm text-black-6 leading-snug">Kelas online tatap muka dengan tutor profesional.</p>
+            <a href="#live-class" class="group flex lg:flex-1">
+                <div class="flex flex-col lg:flex-row items-center lg:items-center gap-ev-2 lg:gap-ev-3 p-ev-3 lg:p-ev-3 rounded-ev-md shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors w-full h-full">
+                    <img src="{{ asset('assets/images/sections/live.webp') }}" alt="Live Class" class="h-ev-logo-desk w-auto object-contain shrink-0 mb-ev-2 lg:mb-0">
+                    <div class="text-center lg:text-left">
+                        <p class="text-ev-body-sm lg:text-ev-body font-bold text-black-8 leading-tight mb-0">Live Class</p>
+                        <p class="text-ev-body-xs lg:text-ev-body-sm text-black-6 leading-snug mb-0">Kelas online tatap muka dengan tutor profesional.</p>
                     </div>
                 </div>
             </a>
 
             {{-- 2. one on one --}}
-            <a href="#one-on-one" class="group h-full">
-                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-[10px] p-[8px] md:p-[10px] rounded-lg shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors h-full">
-                    <img src="{{ asset('assets/images/sections/student.webp') }}" alt="One on One" class="h-[42px] w-auto object-contain shrink-0">
-                    <div>
-                        <p class="text-sm md:text-base font-bold text-black-8 leading-tight mb-1">One on One</p>
-                        <p class="text-xs md:text-sm text-black-6 leading-snug">Belajar intensif dengan program private satu murid satu guru.</p>
+            <a href="#one-on-one" class="group flex lg:flex-1">
+                <div class="flex flex-col lg:flex-row items-center lg:items-center gap-ev-2 lg:gap-ev-3 p-ev-3 lg:p-ev-3 rounded-ev-md shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors w-full h-full">
+                    <img src="{{ asset('assets/images/sections/student.webp') }}" alt="One on One" class="h-ev-logo-desk w-auto object-contain shrink-0 mb-ev-2 lg:mb-0">
+                    <div class="text-center lg:text-left">
+                        <p class="text-ev-body-sm lg:text-ev-body font-bold text-black-8 leading-tight mb-0">One on One</p>
+                        <p class="text-ev-body-xs lg:text-ev-body-sm text-black-6 leading-snug mb-0">Belajar intensif dengan program private satu murid satu guru.</p>
                     </div>
                 </div>
             </a>
 
             {{-- 3. certification test --}}
-            <a href="#certification-test" class="group h-full">
-                <div class="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-[10px] p-[8px] md:p-[10px] rounded-lg shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors h-full">
-                    <img src="{{ asset('assets/images/sections/lp.webp') }}" alt="Certification Test" class="h-[42px] w-auto object-contain shrink-0">
-                    <div>
-                        <p class="text-sm md:text-base font-bold text-black-8 leading-tight mb-1">Certification Test</p>
-                        <p class="text-xs md:text-sm text-black-6 leading-snug">Test sertifikasi kemampuan dengan standar yang diakui.</p>
+            <a href="#certification-test" class="group flex lg:flex-1">
+                <div class="flex flex-col lg:flex-row items-center lg:items-center gap-ev-2 lg:gap-ev-3 p-ev-3 lg:p-ev-3 rounded-ev-md shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-white hover:bg-info-1 transition-colors w-full h-full">
+                    <img src="{{ asset('assets/images/sections/lp.webp') }}" alt="Certification Test" class="h-ev-logo-desk w-auto object-contain shrink-0 mb-ev-2 lg:mb-0">
+                    <div class="text-center lg:text-left">
+                        <p class="text-ev-body-sm lg:text-ev-body font-bold text-black-8 leading-tight mb-0">Certification Test</p>
+                        <p class="text-ev-body-xs lg:text-ev-body-sm text-black-6 leading-snug mb-0">Test sertifikasi kemampuan dengan standar yang diakui.</p>
                     </div>
                 </div>
             </a>
 
             {{-- 4. lainnya --}}
-            <a href="#lainnya" class="group h-full">
-                <div class="flex flex-col md:flex-row items-center justify-center gap-[10px] p-[10px] rounded-lg shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-info-1 h-full">
-                    <img src="{{ asset('assets/images/sections/more.webp') }}" alt="Lainnya" class="h-[42px] w-auto object-contain shrink-0">
-                    <p class="text-sm font-bold text-info-7 text-center min-w-[100px]">Lainnya</p>
+            <a href="#lainnya" class="group flex lg:flex-1">
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-ev-2 lg:gap-ev-3 p-ev-3 lg:p-ev-3 rounded-ev-md shadow-[0px_3px_6px_rgba(0,0,0,0.16)] bg-info-1 h-full w-full">
+                    <img src="{{ asset('assets/images/sections/more.webp') }}" alt="Lainnya" class="h-ev-logo-desk w-auto object-contain shrink-0 mb-ev-2 lg:mb-0">
+                    <p class="text-ev-body-sm lg:text-ev-body font-bold text-info-7 text-center min-w-ev-min-card-sm lg:min-w-ev-min-card mb-0">Lainnya</p>
                 </div>
             </a>
 
