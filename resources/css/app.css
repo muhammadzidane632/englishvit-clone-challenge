@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -92,5 +92,44 @@
     --height-ev-navbar-desk: 76px;
     --radius-ev-sm: 6px;
     --radius-ev-md: 8px;
+    --radius-ev-lg: 16px;
+
+    --z-index-100: 100;
+    --z-index-101: 101;
 }
 
+@layer components {
+    /* Base Recommendation Card */
+    .ev-recommendation-card {
+        @apply bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col snap-start shrink-0;
+        @apply w-[260px] min-w-[260px] md:w-[calc(25%-12px)] lg:w-[calc(25%-18px)];
+    }
+
+    /* Badge within Card */
+    .ev-card-badge {
+        @apply inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-xs font-semibold;
+    }
+
+    /* Primary Button */
+    .ev-btn-primary {
+        @apply w-full bg-[#0d6efd] hover:bg-blue-700 text-white font-semibold text-sm py-2 px-3 rounded-xl transition duration-200;
+    }
+
+    /* Card Title & Desc with Line Clamp */
+    .ev-card-title {
+        @apply text-base sm:text-lg font-bold text-gray-900 mb-2 line-clamp-2 h-[56px];
+    }
+
+    .ev-card-desc {
+        @apply text-gray-600 text-xs sm:text-sm mb-4 grow flex items-start line-clamp-3 h-[60px];
+    }
+
+    /* Custom Scrollbar Hiding */
+    .ev-hide-scroll {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .ev-hide-scroll::-webkit-scrollbar {
+        display: none;
+    }
+}
