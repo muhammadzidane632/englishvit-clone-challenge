@@ -12,6 +12,8 @@
 
     {{-- program rekomendasi --}}
     @include('components.programs.recommendations')
-   
 
+    {{-- testimonials --}}
+    @include('components.testimonials.section')
+   
 @endsection
