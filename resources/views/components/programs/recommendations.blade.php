@@ -49,17 +49,89 @@
             'original_price' => 'Rp825.000',
             'button_text' => 'Lihat Kelas',
         ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'badge' => 'English Test',
+            'badge_color' => 'text-yellow-600 bg-yellow-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'TOEFL Preparation',
+            'description' => 'Fokus belajar TOEFL ITP dengan latihan intensif',
+            'price' => 'Rp250.000',
+            'discount' => '50%',
+            'original_price' => 'Rp500.000',
+            'button_text' => 'Lihat Detail',
+        ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/yes.webp'),
+            'badge' => 'Learning Package',
+            'badge_color' => 'text-blue-600 bg-blue-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/lp.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'English For Business',
+            'description' => 'Belajar bahasa Inggris untuk kebutuhan bisnis dan karir profesional.',
+            'price' => 'Rp99.000',
+            'discount' => '50%',
+            'original_price' => 'Rp198.000',
+            'button_text' => 'Lihat Detail',
+        ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/girl.webp'),
+            'badge' => 'Live Class',
+            'badge_color' => 'text-yellow-600 bg-yellow-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'Speaking Masterclass',
+            'description' => 'Bangun rasa percayamu untuk ngomong menggunakan bahasa Inggris.',
+            'price' => 'Rp150.000',
+            'discount' => '40%',
+            'original_price' => 'Rp250.000',
+            'button_text' => 'Lihat Detail',
+        ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/yes.webp'),
+            'badge' => 'Learning Package',
+            'badge_color' => 'text-blue-600 bg-blue-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/lp.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'Grammar from Zero',
+            'description' => 'Kuasai tenses dan grammar dasar dengan cara yang tidak membosankan.',
+            'price' => 'Rp75.000',
+            'discount' => null,
+            'original_price' => null,
+            'button_text' => 'Lihat Kelas',
+        ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'badge' => 'English Test',
+            'badge_color' => 'text-yellow-600 bg-yellow-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'IELTS Simulation Test',
+            'description' => 'Simulasi tes IELTS sesungguhnya dengan penilaian langsung dari expert.',
+            'price' => 'Rp150.000',
+            'discount' => '25%',
+            'original_price' => 'Rp200.000',
+            'button_text' => 'Lihat Detail',
+        ],
+        [
+            'image' => asset('assets/images/sections/rocomendation/girl.webp'),
+            'badge' => 'Live Class',
+            'badge_color' => 'text-yellow-600 bg-yellow-100',
+            'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
+            'title' => 'TOEFL Hacks Mentoring',
+            'description' => 'Jurus cepat menaklukkan soal TOEFL bersama tutor berpengalaman.',
+            'price' => 'Rp299.000',
+            'discount' => '40%',
+            'original_price' => 'Rp499.000',
+            'button_text' => 'Lihat Kelas',
+        ]
     ];
 @endphp
 
-{{-- section program rekomendasi --}}
+{{-- Section: Recommendation Programs --}}
 <section class="pt-ev-5 pb-ev-7" id="rekomendasi">
     <div class="container max-w-ev-container mx-auto px-4 md:px-6">
         
-        {{-- garis pemisah --}}
-        <hr class="border-t border-dashed border-[#D3D3D4] mb-ev-5 md:mb-ev-6">
+        {{-- Divider Line --}}
+        <hr class="border-t border-dashed border-black-2 mb-ev-5 md:mb-ev-6">
 
-        {{-- judul dan deskripsi --}}
+        {{-- Header: Title & Description --}}
         <div class="text-center mb-ev-6 mt-ev-9">
             <h3 class="font-bold text-ev-body-lg md:text-ev-h2 text-black-8 mb-2">
                 Program Rekomendasi Terbaik
@@ -69,67 +141,67 @@
             </p>
         </div>
 
-       
-        <div class="flex flex-nowrap md:justify-center md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory mx-auto max-w-[1100px] hide-scroll">
-            @foreach($recommendations as $program)
-                <div class="bg-white rounded-2xl shadow border border-gray-100 overflow-hidden flex flex-col min-w-[260px] md:min-w-0 snap-center shrink-0 w-[260px] md:w-auto">
-                    <!-- Image -->
-                    <div class="relative h-36 sm:h-40 w-full bg-gray-200">
-                        <img src="{{ $program['image'] }}" alt="{{ $program['title'] }}" class="w-full h-full object-cover">
-                    </div>
+        {{-- Slider Wrapper --}}
+        <div class="relative w-full mx-auto max-w-[1200px]">
+            {{-- Clipping Area with Shadow Safety Buffer --}}
+            <div class="overflow-hidden -mx-12 px-12">
+                <div id="cardsWrapper" class="flex flex-nowrap gap-4 lg:gap-6 overflow-x-auto pb-10 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
+                    @foreach($recommendations as $program)
+                        {{-- Card Item --}}
+                        <div class="ev-recommendation-card">
+                            {{-- Image --}}
+                            <div class="relative h-36 sm:h-40 w-full bg-gray-200">
+                                <img src="{{ $program['image'] }}" alt="{{ $program['title'] }}" class="w-full h-full object-cover">
+                            </div>
 
-                    <!-- Content -->
-                    <div class="p-4 sm:p-5 flex flex-col flex-grow">
-                        <!-- Badge -->
-                        <div class="mb-3">
-                            <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-xs font-semibold {{ $program['badge_color'] }}">
-                                {!! $program['badge_icon'] !!}
-                                {{ $program['badge'] }}
-                            </span>
-                        </div>
-
-                        <!-- Title -->
-                        <h3 class="text-base sm:text-lg font-bold text-gray-900 mb-2">{{ $program['title'] }}</h3>
-
-                        <!-- Description -->
-                        <p class="text-gray-600 text-xs sm:text-sm mb-4 flex-grow flex items-start">
-                            {{ $program['description'] }}
-                        </p>
-
-                        <!-- Pricing Section -->
-                        <div class="mb-4">
-                            <div class="text-lg sm:text-xl font-bold text-gray-900 mb-1">{{ $program['price'] }}</div>
-                            @if($program['discount'])
-                                <div class="flex items-center text-xs">
-                                    <span class="bg-red-100 text-red-600 font-bold px-1 py-0.5 rounded text-[10px] mr-2">{{ $program['discount'] }}</span>
-                                    <span class="text-gray-400 line-through text-[11px]">{{ $program['original_price'] }}</span>
+                            {{-- Card Content --}}
+                            <div class="p-4 sm:p-5 flex flex-col grow">
+                                {{-- Badge --}}
+                                <div class="mb-3 flex">
+                                    <span class="ev-card-badge {{ $program['badge_color'] }}">
+                                        {!! $program['badge_icon'] !!}
+                                        {{ $program['badge'] }}
+                                    </span>
                                 </div>
-                            @else
-                                <div class="h-4 sm:h-5"></div>
-                            @endif
+
+                                {{-- Title --}}
+                                <h3 class="ev-card-title">{{ $program['title'] }}</h3>
+
+                                {{-- Description --}}
+                                <p class="ev-card-desc">{{ $program['description'] }}</p>
+
+                                {{-- Pricing & Discount --}}
+                                <div class="mb-4 flex flex-col justify-end h-ev-8">
+                                    <div class="text-lg sm:text-xl font-bold text-gray-900 mb-1 leading-none">{{ $program['price'] }}</div>
+                                    <div class="flex items-center text-xs h-[16px]">
+                                        @if($program['discount'])
+                                            <span class="bg-red-100 text-red-600 font-bold px-1 py-0.5 rounded text-[10px] mr-2 leading-none">{{ $program['discount'] }}</span>
+                                            <span class="text-gray-400 line-through text-[11px] leading-none">{{ $program['original_price'] }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+
+                                {{-- CTA Button --}}
+                                <button class="ev-btn-primary">
+                                    {{ $program['button_text'] }}
+                                </button>
+                            </div>
                         </div>
-
-                        <!-- Button -->
-                        <button class="w-full bg-[#0d6efd] hover:bg-blue-700 text-white font-semibold text-sm py-2 px-3 rounded-xl transition duration-200">
-                            {{ $program['button_text'] }}
-                        </button>
-                    </div>
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
+            
+            {{-- Pagination Navigation (Dots) --}}
+            <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 hidden md:flex h-ev-2">
+                @php $dotCount = count($recommendations) - 3; @endphp
+                @for($i = 0; $i < $dotCount; $i++)
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }}" data-index="{{ $i }}"></button>
+                @endfor
+            </div>
         </div>
 
-        <!-- Pagination Dots -->
-        <div class="flex justify-center items-center gap-2 mt-8 mb-8 hidden md:flex">
-            <div class="w-8 h-2 bg-[#0d6efd] rounded-full"></div>
-            <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
-            <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
-            <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
-            <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
-            <div class="w-2 h-2 bg-gray-200 rounded-full"></div>
-        </div>
-
-        <!-- View All Link -->
-        <div class="text-center mt-8">
+        {{-- Footer Link: See All --}}
+        <div class="text-center mt-4">
             <a href="#" class="inline-flex items-center font-bold text-[#0d6efd] hover:text-blue-800 text-lg">
                 Lihat semua kelas
                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -140,12 +212,58 @@
 
     </div>
 </section>
-<style>
-    .hide-scroll::-webkit-scrollbar {
-        display: none;
-    }
-    .hide-scroll {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const wadahSlider = document.getElementById("cardsWrapper");
+        const titikNavigasi = document.querySelectorAll("#carouselDots button");
+        
+        if (!wadahSlider || !titikNavigasi.length) return;
+        
+        /* Update Status  */
+        const updateTitik = (indexAktif) => {
+            titikNavigasi.forEach((titik, idx) => {
+                titik.className = idx === indexAktif 
+                    ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-8 h-2"
+                    : "rounded-full transition-all duration-300 bg-gray-200 w-2 h-2 hover:bg-gray-300";
+            });
+        };
+
+        /* Sync Titik  */
+        let sedangGeserManual = false;
+        wadahSlider.addEventListener("scroll", () => {
+            if (sedangGeserManual) return;
+            const kartuPertama = wadahSlider.children[0];
+            const gayaElemen = window.getComputedStyle(wadahSlider);
+            const jarakGap = parseFloat(gayaElemen.gap) || 0;
+            const indexSekarang = Math.round(wadahSlider.scrollLeft / (kartuPertama.offsetWidth + jarakGap));
+            updateTitik(indexSekarang);
+        });
+
+        /* Navigatiton titik */
+        titikNavigasi.forEach((titik) => {
+            titik.addEventListener("click", function() {
+                const targetIndex = parseInt(this.getAttribute("data-index"));
+                const kartuTarget = wadahSlider.children[targetIndex];
+                
+                if (kartuTarget) {
+                    sedangGeserManual = true;
+                    const gayaElemen = window.getComputedStyle(wadahSlider);
+                    const jarakGap = parseFloat(gayaElemen.gap) || 0;
+                    const posisiScroll = targetIndex * (kartuTarget.offsetWidth + jarakGap);
+                    const scrollMaksimal = wadahSlider.scrollWidth - wadahSlider.clientWidth;
+                    
+                    wadahSlider.scrollTo({
+                        left: Math.min(posisiScroll, scrollMaksimal),
+                        behavior: "smooth"
+                    });
+                    
+                    updateTitik(targetIndex);
+                    
+                    /* Reset Flag  */
+                    setTimeout(() => { sedangGeserManual = false; }, 600);
+                }
+            });
+        });
+    });
+</script>

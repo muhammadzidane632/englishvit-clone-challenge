@@ -1,4 +1,4 @@
-{{-- navbar mobile --}}
+{{-- navbar mobile --}} 
 <nav class="md:hidden bg-primary-8" id="navbar-mobile">
     <div class="px-ev-3 py-ev-3 flex justify-between items-center bg-primary-8">
 
@@ -29,11 +29,11 @@
 </nav>
 
 {{-- overlay gelap pas menu terbuka --}}
-<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-[100] hidden"></div>
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/40 z-100 hidden"></div>
 
 {{-- panel menu geser dari kanan --}}
 <div id="mobile-menu-panel"
-     class="fixed top-0 right-0 bottom-0 w-[80%] max-w-xs bg-white z-[101] shadow-2xl translate-x-full transition-transform duration-300 ease-in-out"
+     class="fixed top-0 right-0 bottom-0 w-[80%] max-w-xs bg-white z-101 shadow-2xl translate-x-full transition-transform duration-300 ease-in-out"
      role="dialog"
      aria-label="Menu navigasi">
 
