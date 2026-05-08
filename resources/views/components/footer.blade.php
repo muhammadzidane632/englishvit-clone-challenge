@@ -62,7 +62,8 @@
                 <div class="lg:col-span-4 flex flex-col items-start space-y-12 md:space-y-10">
                     <div>
                         <h4 class="text-base font-bold mb-6 tracking-wide">Download Englishvit App</h4>
-                        <div class="flex flex-col xl:flex-row items-start gap-4">
+                        <div class="flex flex-col lg:flex-row items-start gap-4">
+
                             <a href="https://play.google.com/store/apps/details?id=com.wibc.englishvit" target="_blank" class="hover:opacity-80 transition-opacity">
                                 <img src="{{ asset('assets/images/sections/footer/google-play.webp') }}" alt="Google Play" class="h-11 md:h-13 w-auto object-contain">
                             </a>
