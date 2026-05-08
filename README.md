@@ -25,7 +25,7 @@ Clone tampilan homepage [englishvit.com](https://englishvit.com) menggunakan Lar
 - Composer >= 2.x
 - Node.js >= 18.x dan npm >= 9.x
 
-  note : Jika Belum ada requirementsnya atau versinya sudah outdated. Silahkan update atau install requirements yang dibutuhkan
+  Catatan: Jika requirements belum tersedia atau versinya sudah usang (outdated), silahkan instal terlebih dahulu atau perbarui ke versi terbaru (sangat saya sarankan).
 
 ---
 
@@ -35,27 +35,36 @@ Clone tampilan homepage [englishvit.com](https://englishvit.com) menggunakan Lar
 
 ```Bash
 git clone https://github.com/muhammadzidane632/englishvit-clone-challenge.git
+# Masuk Ke dalam Folder
 cd englishvit-clone-challenge
 ```
 
 ### 2. Install dependencies
 
 ```bash
+# Menginstal semua library/package PHP yang dibutuhkan proyek berdasarkan file composer.json
 composer install
-#    lalu 
+
+# Menginstal semua library JavaScript dan tools CSS (seperti Tailwind/Vite) berdasarkan file package.json
 npm install
+
 ```
 
 ### 3. Setup environment
 
 ```bash
+# Salin konfigurasi dari .env.example ke .env
 cp .env.example .env
-# Lalu
+
+# Generate Application Key  (membuat key baru untuk enkripsi)
 php artisan key:generate
-# Lanjut Membuat database Untuk default Project Laravel
+
+# Membuat file database SQLite (sesuai konfigurasi default Laravel)
 touch database/database.sqlite
-# Akhiri dengan
+
+# Menjalankan migrasi untuk membuat tabel-tabel di database
 php artisan migrate 
+
 ```
 
 ### 4. Jalankan development server
