@@ -18,5 +18,8 @@
 
     {{-- partners --}}
     @include('components.partners')
+
+    {{-- special promo --}}
+    @include('components.promo')
    
 @endsection
