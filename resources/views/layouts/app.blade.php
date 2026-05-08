@@ -45,6 +45,8 @@
     </main>
 
     {{-- footer akan ditambah nanti --}}
+    @include('components.bottom-navbar')
+
 
 </body>
 </html>
