@@ -25,7 +25,7 @@
         }
     </style>
 </head>
-<body class="bg-white">
+<body class="bg-white overflow-x-hidden w-full">
 
     {{-- navbar desktop (md ke atas) --}}
     @include('components.navbar-desktop')
