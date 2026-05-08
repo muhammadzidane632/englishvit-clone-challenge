@@ -50,7 +50,12 @@ npm install
 
 ```bash
 cp .env.example .env
+# Lalu
 php artisan key:generate
+# Lanjut Membuat database Untuk default Project Laravel
+touch database/database.sqlite
+# Akhiri dengan
+php artisan migrate 
 ```
 
 ### 4. Jalankan development server
