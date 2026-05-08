@@ -33,7 +33,7 @@
     ];
 @endphp
 
-<section class="py-12 md:py-ev-7 bg-white" id="benefits">
+<section class="pt-12 pb-4 md:pt-ev-7 md:pb-6 bg-white" id="benefits">
     <div class="container max-w-ev-container mx-auto px-4 md:px-6">
         
         {{-- Header --}}
