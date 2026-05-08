@@ -12,6 +12,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://englishvit.com/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://englishvit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://englishvit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://englishvit.com/favicon-16x16.png">
+
     <!-- TailwindCSS via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
