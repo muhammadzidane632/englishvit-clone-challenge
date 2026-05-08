@@ -192,12 +192,12 @@
             </div>
             
             {{-- Pagination Navigation (Dots) --}}
-            <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 hidden md:flex h-ev-2">
-                @php $dotCount = count($recommendations) - 3; @endphp
-                @for($i = 0; $i < $dotCount; $i++)
-                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }}" data-index="{{ $i }}"></button>
+            <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
+                @for($i = 0; $i < count($recommendations); $i++)
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }} {{ $i > (count($recommendations) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}"></button>
                 @endfor
             </div>
+
         </div>
 
         {{-- Footer Link: See All --}}
@@ -223,11 +223,18 @@
         /* Update Status  */
         const updateTitik = (indexAktif) => {
             titikNavigasi.forEach((titik, idx) => {
-                titik.className = idx === indexAktif 
+                const isActive = idx === indexAktif;
+                titik.className = isActive 
                     ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-8 h-2"
                     : "rounded-full transition-all duration-300 bg-gray-200 w-2 h-2 hover:bg-gray-300";
+                
+                // Keep the lg:hidden state from Blade
+                if (idx > {{ count($recommendations) - 4 }}) {
+                    titik.classList.add('lg:hidden');
+                }
             });
         };
+
 
         /* Sync Titik  */
         let sedangGeserManual = false;
@@ -237,8 +244,13 @@
             const gayaElemen = window.getComputedStyle(wadahSlider);
             const jarakGap = parseFloat(gayaElemen.gap) || 0;
             const indexSekarang = Math.round(wadahSlider.scrollLeft / (kartuPertama.offsetWidth + jarakGap));
-            updateTitik(indexSekarang);
+            
+            const isAtEnd = wadahSlider.scrollLeft + wadahSlider.clientWidth >= wadahSlider.scrollWidth - 10;
+            const safeIndex = isAtEnd ? titikNavigasi.length - 1 : Math.min(indexSekarang, titikNavigasi.length - 1);
+            
+            updateTitik(safeIndex);
         });
+
 
         /* Navigatiton titik */
         titikNavigasi.forEach((titik) => {

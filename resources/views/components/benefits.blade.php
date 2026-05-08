@@ -46,8 +46,8 @@
             </p>
         </div>
 
-        {{-- Desktop Grid (Hidden on mobile) --}}
-        <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch max-w-[1050px] mx-auto">
+        {{-- Desktop Grid (Hidden on mobile/tablet) --}}
+        <div class="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch max-w-[1050px] mx-auto">
             @foreach($benefits as $benefit)
                 <div class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 px-5 py-6 md:px-6 md:py-8 text-center flex flex-col items-center hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
                     <img src="{{ asset('assets/images/sections/benefits/' . $benefit['image']) }}" alt="{{ $benefit['title'] }}" class="h-24 w-auto object-contain mb-6">
@@ -57,8 +57,8 @@
             @endforeach
         </div>
 
-        {{-- Mobile Slider (Visible only on mobile) --}}
-        <div class="md:hidden relative w-full mx-auto">
+        {{-- Mobile/Tablet Slider (Visible until Desktop) --}}
+        <div class="lg:hidden relative w-full mx-auto">
             <div class="overflow-hidden">
                 <div id="benefitsCardsWrapper" class="flex gap-4 overflow-x-auto pb-8 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
                     @foreach($benefits as $benefit)
@@ -72,7 +72,7 @@
             </div>
             
             {{-- Pagination Navigation (Dots) --}}
-            <div id="benefitsCarouselDots" class="justify-center items-center gap-2 mt-0 mb-4 flex h-ev-2">
+            <div id="benefitsCarouselDots" class="justify-center items-center gap-2 mt-0 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
                 @for($i = 0; $i < count($benefits); $i++)
                     <div class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-gray-200 w-2 h-2' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></div>
                 @endfor
@@ -105,8 +105,12 @@
             const gap = parseFloat(computedStyle.gap) || 0;
             const scrollIndex = Math.round(benefitsSlider.scrollLeft / (firstCard.offsetWidth + gap));
             
-            const safeIndex = Math.min(scrollIndex, benefitsDots.length - 1);
+            // Check if we are at the end of the scroll
+            const isAtEnd = benefitsSlider.scrollLeft + benefitsSlider.clientWidth >= benefitsSlider.scrollWidth - 10;
+            const safeIndex = isAtEnd ? benefitsDots.length - 1 : Math.min(scrollIndex, benefitsDots.length - 1);
+            
             updateBenefitsDots(safeIndex);
         });
     });
 </script>
+

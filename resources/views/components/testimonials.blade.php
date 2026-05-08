@@ -92,12 +92,13 @@
             </div>
 
             {{-- Pagination Navigation (Dots) --}}
-            <div id="testimonialCarouselDots" class="justify-center items-center gap-2 mt-2 mb-4 flex h-ev-2">
-                @php $dotCount = count($testimonials) - 2; @endphp
-                @for($i = 0; $i < $dotCount; $i++)
-                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-primary-2 w-2 h-2 hover:bg-primary-3' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+            <div id="testimonialCarouselDots" class="justify-center items-center gap-2 mt-2 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
+                @for($i = 0; $i < count($testimonials) - 1; $i++)
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-primary-2 w-2 h-2 hover:bg-primary-3' }} {{ $i > (count($testimonials) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
                 @endfor
             </div>
+
+
         </div>
     </div>
 </section>
@@ -111,11 +112,18 @@
         
         const updateTestimonialTitik = (indexAktif) => {
             testimonialTitikNavigasi.forEach((titik, idx) => {
-                titik.className = idx === indexAktif 
+                const isActive = idx === indexAktif;
+                titik.className = isActive 
                     ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-6 h-2"
                     : "rounded-full transition-all duration-300 bg-primary-2 w-2 h-2 hover:bg-primary-3";
+                
+                // Maintain the lg:hidden state from Blade
+                if (idx > {{ count($testimonials) - 3 }}) {
+                    titik.classList.add('lg:hidden');
+                }
             });
         };
+
 
         let sedangGeserTestimonial = false;
         testimonialWadahSlider.addEventListener("scroll", () => {
