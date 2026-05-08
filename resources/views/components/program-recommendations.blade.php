@@ -145,7 +145,7 @@
         <div class="relative w-full mx-auto max-w-[1200px]">
             {{-- Clipping Area with Shadow Safety Buffer --}}
             <div class="overflow-hidden -mx-12 px-12">
-                <div id="cardsWrapper" class="flex flex-nowrap gap-4 lg:gap-6 overflow-x-auto pb-10 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
+                <div id="cardsWrapper" class="relative flex flex-nowrap gap-4 lg:gap-6 overflow-x-auto pb-10 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
                     @foreach($recommendations as $program)
                         {{-- Card Item --}}
                         <div class="ev-recommendation-card">
@@ -192,12 +192,11 @@
             </div>
             
             {{-- Pagination Navigation (Dots) --}}
-            <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
+            <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 flex h-ev-2">
                 @for($i = 0; $i < count($recommendations); $i++)
                     <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }} {{ $i > (count($recommendations) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}"></button>
                 @endfor
             </div>
-
         </div>
 
         {{-- Footer Link: See All --}}
@@ -235,15 +234,20 @@
             });
         };
 
-
         /* Sync Titik  */
-        let sedangGeserManual = false;
+        let kartuPertama = wadahSlider.children[0];
+        let jarakGap = parseFloat(window.getComputedStyle(wadahSlider).gap) || 0;
+        let lebarKartu = kartuPertama ? kartuPertama.offsetWidth : 0;
+
+        window.addEventListener('resize', () => {
+            kartuPertama = wadahSlider.children[0];
+            jarakGap = parseFloat(window.getComputedStyle(wadahSlider).gap) || 0;
+            lebarKartu = kartuPertama ? kartuPertama.offsetWidth : 0;
+        });
+
         wadahSlider.addEventListener("scroll", () => {
-            if (sedangGeserManual) return;
-            const kartuPertama = wadahSlider.children[0];
-            const gayaElemen = window.getComputedStyle(wadahSlider);
-            const jarakGap = parseFloat(gayaElemen.gap) || 0;
-            const indexSekarang = Math.round(wadahSlider.scrollLeft / (kartuPertama.offsetWidth + jarakGap));
+            if (!lebarKartu) return;
+            const indexSekarang = Math.round(wadahSlider.scrollLeft / (lebarKartu + jarakGap));
             
             const isAtEnd = wadahSlider.scrollLeft + wadahSlider.clientWidth >= wadahSlider.scrollWidth - 10;
             const safeIndex = isAtEnd ? titikNavigasi.length - 1 : Math.min(indexSekarang, titikNavigasi.length - 1);
@@ -259,23 +263,17 @@
                 const kartuTarget = wadahSlider.children[targetIndex];
                 
                 if (kartuTarget) {
-                    sedangGeserManual = true;
-                    const gayaElemen = window.getComputedStyle(wadahSlider);
-                    const jarakGap = parseFloat(gayaElemen.gap) || 0;
-                    const posisiScroll = targetIndex * (kartuTarget.offsetWidth + jarakGap);
+                    const scrollPos = kartuTarget.offsetLeft - wadahSlider.offsetLeft;
                     const scrollMaksimal = wadahSlider.scrollWidth - wadahSlider.clientWidth;
                     
                     wadahSlider.scrollTo({
-                        left: Math.min(posisiScroll, scrollMaksimal),
+                        left: Math.min(scrollPos, scrollMaksimal),
                         behavior: "smooth"
                     });
-                    
-                    updateTitik(targetIndex);
-                    
-                    /* Reset Flag  */
-                    setTimeout(() => { sedangGeserManual = false; }, 600);
                 }
             });
         });
+
     });
 </script>
+

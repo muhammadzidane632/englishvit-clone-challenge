@@ -92,7 +92,8 @@
             </div>
 
             {{-- Pagination Navigation (Dots) --}}
-            <div id="testimonialCarouselDots" class="justify-center items-center gap-2 mt-2 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
+            <div id="testimonialCarouselDots" class="justify-center items-center gap-2 mt-2 mb-4 flex h-ev-2">
+
                 @for($i = 0; $i < count($testimonials) - 1; $i++)
                     <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-primary-2 w-2 h-2 hover:bg-primary-3' }} {{ $i > (count($testimonials) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
                 @endfor
@@ -125,18 +126,26 @@
         };
 
 
-        let sedangGeserTestimonial = false;
+        /* Sync Titik  */
+        let kartuPertama = testimonialWadahSlider.children[0];
+        let jarakGap = parseFloat(window.getComputedStyle(testimonialWadahSlider).gap) || 0;
+        let lebarKartu = kartuPertama ? kartuPertama.offsetWidth : 0;
+
+        window.addEventListener('resize', () => {
+            kartuPertama = testimonialWadahSlider.children[0];
+            jarakGap = parseFloat(window.getComputedStyle(testimonialWadahSlider).gap) || 0;
+            lebarKartu = kartuPertama ? kartuPertama.offsetWidth : 0;
+        });
+
         testimonialWadahSlider.addEventListener("scroll", () => {
-            if (sedangGeserTestimonial) return;
-            const kartuPertama = testimonialWadahSlider.children[0];
-            const gayaElemen = window.getComputedStyle(testimonialWadahSlider);
-            const jarakGap = parseFloat(gayaElemen.gap) || 0;
-            const indexSekarang = Math.round(testimonialWadahSlider.scrollLeft / (kartuPertama.offsetWidth + jarakGap));
+            if (!lebarKartu) return;
+            const indexSekarang = Math.round(testimonialWadahSlider.scrollLeft / (lebarKartu + jarakGap));
             
             // Handle edge case where index might be larger than dots due to different screen sizes
             const safeIndex = Math.min(indexSekarang, testimonialTitikNavigasi.length - 1);
             updateTestimonialTitik(safeIndex);
         });
+
 
         testimonialTitikNavigasi.forEach((titik) => {
             titik.addEventListener("click", function() {
@@ -144,23 +153,17 @@
                 const kartuTarget = testimonialWadahSlider.children[targetIndex];
                 
                 if (kartuTarget) {
-                    sedangGeserTestimonial = true;
-                    const gayaElemen = window.getComputedStyle(testimonialWadahSlider);
-                    const jarakGap = parseFloat(gayaElemen.gap) || 0;
-                    const posisiScroll = targetIndex * (kartuTarget.offsetWidth + jarakGap);
+                    const scrollPos = kartuTarget.offsetLeft - testimonialWadahSlider.offsetLeft - (parseFloat(window.getComputedStyle(testimonialWadahSlider).paddingLeft) || 0);
                     const scrollMaksimal = testimonialWadahSlider.scrollWidth - testimonialWadahSlider.clientWidth;
                     
                     testimonialWadahSlider.scrollTo({
-                        left: Math.min(posisiScroll, scrollMaksimal),
+                        left: Math.min(scrollPos, scrollMaksimal),
                         behavior: "smooth"
                     });
-                    
-                    updateTestimonialTitik(targetIndex);
-                    
-                    setTimeout(() => { sedangGeserTestimonial = false; }, 600);
                 }
             });
         });
+
 
         /* Counter Animation */
         const counterElement = document.getElementById("studentCounter");

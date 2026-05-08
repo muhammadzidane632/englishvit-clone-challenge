@@ -60,9 +60,9 @@
         {{-- Mobile/Tablet Slider (Visible until Desktop) --}}
         <div class="lg:hidden relative w-full mx-auto">
             <div class="overflow-hidden">
-                <div id="benefitsCardsWrapper" class="flex gap-4 overflow-x-auto pb-8 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
+                <div id="benefitsCardsWrapper" class="relative flex flex-nowrap gap-4 overflow-x-auto pb-8 pt-4 snap-x snap-mandatory ev-hide-scroll scroll-smooth">
                     @foreach($benefits as $benefit)
-                        <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] border border-gray-50 px-5 py-8 text-center flex flex-col items-center shrink-0 w-[85%] sm:w-[300px] snap-center">
+                        <div class="bg-white rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.06)] border border-gray-50 px-5 py-8 text-center flex flex-col items-center shrink-0 w-[85%] sm:w-[300px] snap-start">
                             <img src="{{ asset('assets/images/sections/benefits/' . $benefit['image']) }}" alt="{{ $benefit['title'] }}" class="h-20 w-auto object-contain mb-5">
                             <h4 class="font-bold text-[18px] text-gray-900 mb-3">{{ $benefit['title'] }}</h4>
                             <p class="text-gray-600 text-ev-body-sm leading-relaxed">{!! $benefit['desc'] !!}</p>
@@ -72,9 +72,9 @@
             </div>
             
             {{-- Pagination Navigation (Dots) --}}
-            <div id="benefitsCarouselDots" class="justify-center items-center gap-2 mt-0 mb-4 flex h-ev-2 pointer-events-none lg:pointer-events-auto">
+            <div id="benefitsCarouselDots" class="justify-center items-center gap-2 mt-0 mb-4 flex h-ev-2">
                 @for($i = 0; $i < count($benefits); $i++)
-                    <div class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-gray-200 w-2 h-2' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></div>
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-gray-200 w-2 h-2' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
                 @endfor
             </div>
         </div>
@@ -85,7 +85,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const benefitsSlider = document.getElementById("benefitsCardsWrapper");
-        const benefitsDots = document.querySelectorAll("#benefitsCarouselDots div");
+        const benefitsDots = document.querySelectorAll("#benefitsCarouselDots button");
         
         if (!benefitsSlider || !benefitsDots.length) return;
         
@@ -97,13 +97,19 @@
             });
         };
 
-        let isScrollingBenefits = false;
+        let firstCard = benefitsSlider.children[0];
+        let gap = parseFloat(window.getComputedStyle(benefitsSlider).gap) || 0;
+        let cardWidth = firstCard ? firstCard.offsetWidth : 0;
+
+        window.addEventListener('resize', () => {
+            firstCard = benefitsSlider.children[0];
+            gap = parseFloat(window.getComputedStyle(benefitsSlider).gap) || 0;
+            cardWidth = firstCard ? firstCard.offsetWidth : 0;
+        });
+
         benefitsSlider.addEventListener("scroll", () => {
-            if (isScrollingBenefits) return;
-            const firstCard = benefitsSlider.children[0];
-            const computedStyle = window.getComputedStyle(benefitsSlider);
-            const gap = parseFloat(computedStyle.gap) || 0;
-            const scrollIndex = Math.round(benefitsSlider.scrollLeft / (firstCard.offsetWidth + gap));
+            if (!cardWidth) return;
+            const scrollIndex = Math.round(benefitsSlider.scrollLeft / (cardWidth + gap));
             
             // Check if we are at the end of the scroll
             const isAtEnd = benefitsSlider.scrollLeft + benefitsSlider.clientWidth >= benefitsSlider.scrollWidth - 10;
@@ -111,6 +117,28 @@
             
             updateBenefitsDots(safeIndex);
         });
+
+
+        /* Navigation dots click */
+        benefitsDots.forEach((dot) => {
+            dot.addEventListener("click", function() {
+                const targetIndex = parseInt(this.getAttribute("data-index"));
+                const targetCard = benefitsSlider.children[targetIndex];
+                
+                if (targetCard) {
+                    const scrollPos = targetCard.offsetLeft - benefitsSlider.offsetLeft;
+                    const maxScroll = benefitsSlider.scrollWidth - benefitsSlider.clientWidth;
+                    
+                    benefitsSlider.scrollTo({
+                        left: Math.min(scrollPos, maxScroll),
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
     });
 </script>
+
+
+
 
