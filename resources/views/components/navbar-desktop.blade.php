@@ -19,12 +19,28 @@
                         Beranda
                     </a>
                 </li>
-                <li>
+                <li class="relative group">
                     <a href="{{ url('/daftar-kursus') }}"
-                       class="text-white/90 text-ev-body font-normal px-2 py-2 hover:text-white transition-colors">
+                       class="flex items-center text-white/90 text-ev-body font-normal px-2 py-2 hover:text-white transition-colors">
                         Daftar Kursus
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
                     </a>
+                    
+                    {{-- Dropdown Menu --}}
+                    <div class="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50">
+                        <div class="bg-white rounded-lg shadow-xl py-2 min-w-[220px] border border-gray-100">
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">Live Class</a>
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">One on One</a>
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">Certification Test</a>
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">Learning Package</a>
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">Smart Book</a>
+                            <a href="#" class="block px-6 py-3 text-black font-medium hover:bg-gray-50 transition-colors">Subscription</a>
+                        </div>
+                    </div>
                 </li>
+
                 <li>
                     <a href="{{ url('/blog') }}"
                        class="text-white/90 text-ev-body font-normal px-2 py-2 hover:text-white transition-colors">
