@@ -5,15 +5,18 @@
 @section('content')
 
     {{-- hero section --}}
-    @include('components.hero.section')
+    @include('components.hero')
 
     {{-- pilihan program --}}
-    @include('components.programs.options')
+    @include('components.program-options')
 
     {{-- program rekomendasi --}}
-    @include('components.programs.recommendations')
+    @include('components.program-recommendations')
 
     {{-- testimonials --}}
-    @include('components.testimonials.section')
+    @include('components.testimonials')
+
+    {{-- partners --}}
+    @include('components.partners')
    
 @endsection

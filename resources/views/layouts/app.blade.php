@@ -28,10 +28,10 @@
 <body class="bg-white">
 
     {{-- navbar desktop (md ke atas) --}}
-    @include('components.navbar.desktop')
+    @include('components.navbar-desktop')
 
     {{-- navbar mobile (di bawah md) --}}
-    @include('components.navbar.mobile')
+    @include('components.navbar-mobile')
 
     <main>
         @yield('content')

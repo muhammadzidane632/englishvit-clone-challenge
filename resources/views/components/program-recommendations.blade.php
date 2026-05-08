@@ -2,7 +2,7 @@
 
     $recommendations = [
         [
-            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'English Test',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -14,7 +14,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'English Test',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -50,7 +50,7 @@
             'button_text' => 'Lihat Kelas',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'English Test',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -98,7 +98,7 @@
             'button_text' => 'Lihat Kelas',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/boy.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'English Test',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
