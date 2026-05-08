@@ -133,7 +133,7 @@
 
         {{-- Header: Title & Description --}}
         <div class="text-center mb-ev-6 mt-ev-9">
-            <h3 class="font-bold text-ev-body-lg md:text-ev-h2 text-black-8 mb-2">
+            <h3 class="font-bold text-2xl md:text-ev-h2 text-black-8 mb-2">
                 Program Rekomendasi Terbaik
             </h3>
             <p class="text-black-6 text-ev-body-sm md:text-ev-body">

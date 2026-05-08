@@ -4,7 +4,7 @@
         
         {{-- judul section --}}
         <div class="text-center mb-ev-6">
-            <h2 class="text-ev-body-lg md:text-ev-h4 font-semibold text-black-8">
+            <h2 class="text-2xl md:text-ev-h4 font-semibold text-black-8">
                 Pilihan Program Belajar di Englishvit
             </h2>
         </div>
