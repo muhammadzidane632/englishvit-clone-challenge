@@ -24,5 +24,8 @@
 
     {{-- why englishvit / benefits --}}
     @include('components.benefits')
+
+    {{-- lottie banner --}}
+    @include('components.lottie-banner')
    
 @endsection

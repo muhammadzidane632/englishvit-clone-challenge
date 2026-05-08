@@ -24,6 +24,9 @@
             letter-spacing: -0.03em;
         }
     </style>
+
+    <!-- Lottie Player -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body class="bg-white overflow-x-hidden w-full">
 
