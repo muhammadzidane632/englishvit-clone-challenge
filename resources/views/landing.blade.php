@@ -27,5 +27,8 @@
 
     {{-- lottie banner --}}
     @include('components.lottie-banner')
+
+    {{-- FAQ section --}}
+    @include('components.faq')
    
 @endsection
