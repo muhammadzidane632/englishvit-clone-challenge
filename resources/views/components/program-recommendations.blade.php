@@ -26,7 +26,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/yes.webp'),
+            'image' => asset('assets/images/sections/recommendations/yes.webp'),
             'badge' => 'Learning Package',
             'badge_color' => 'text-blue-600 bg-blue-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/lp.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -38,7 +38,7 @@
             'button_text' => 'Lihat Kelas',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/girl.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'Live Class',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -62,7 +62,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/yes.webp'),
+            'image' => asset('assets/images/sections/recommendations/yes.webp'),
             'badge' => 'Learning Package',
             'badge_color' => 'text-blue-600 bg-blue-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/lp.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -74,7 +74,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/girl.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'Live Class',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -86,7 +86,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/yes.webp'),
+            'image' => asset('assets/images/sections/recommendations/yes.webp'),
             'badge' => 'Learning Package',
             'badge_color' => 'text-blue-600 bg-blue-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/lp.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
@@ -110,7 +110,7 @@
             'button_text' => 'Lihat Detail',
         ],
         [
-            'image' => asset('assets/images/sections/rocomendation/girl.webp'),
+            'image' => asset('assets/images/sections/recommendations/girl.webp'),
             'badge' => 'Live Class',
             'badge_color' => 'text-yellow-600 bg-yellow-100',
             'badge_icon' => '<img src="' . asset('assets/images/sections/options/live.webp') . '" alt="icon" class="w-4 h-4 mr-1 object-contain">',
