@@ -39,5 +39,8 @@
 
     {{-- blog section --}}
     @include('components.blogs')
+
+    {{-- footer --}}
+    @include('components.footer')
    
 @endsection
