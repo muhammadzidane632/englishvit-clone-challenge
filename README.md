@@ -25,6 +25,8 @@ Clone tampilan homepage [englishvit.com](https://englishvit.com) menggunakan Lar
 - Composer >= 2.x
 - Node.js >= 18.x dan npm >= 9.x
 
+  note : Jika Belum ada ataau tidak sesuai versi. Silahkan update atau install requirements yang dibutuhkan
+
 ---
 
 ## Instalasi dan Penggunaan
@@ -40,6 +42,7 @@ cd englishvit-clone-challenge
 
 ```bash
 composer install
+    lalu 
 npm install
 ```
 
