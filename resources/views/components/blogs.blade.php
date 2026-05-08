@@ -46,7 +46,7 @@
                     {{-- Content --}}
                     <div class="flex flex-col flex-1 px-1">
                         <p class="text-xs md:text-sm text-gray-400 mb-1.5 md:mb-2 font-medium">{{ $blog['date'] }}</p>
-                        <h3 class="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-primary-7 transition-colors line-clamp-2 min-h-[48px] md:min-h-[56px] leading-tight">
+                        <h3 class="text-base md:text-lg lg:text-xl font-bold text-gray-900 mb-2 md:mb-3 group-hover:text-primary-7 transition-colors line-clamp-2 md:line-clamp-none md:min-h-[80px] lg:line-clamp-2 lg:min-h-[56px] leading-tight">
                             {{ $blog['title'] }}
                         </h3>
                         <p class="text-gray-600 text-xs md:text-sm lg:text-base mb-4 md:mb-6 line-clamp-2">
