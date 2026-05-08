@@ -36,5 +36,8 @@
 
     {{-- cta admin --}}
     @include('components.cta-admin')
+
+    {{-- blog section --}}
+    @include('components.blogs')
    
 @endsection
