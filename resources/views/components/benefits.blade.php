@@ -74,7 +74,7 @@
             {{-- Pagination Navigation (Dots) --}}
             <div id="benefitsCarouselDots" class="justify-center items-center gap-2 mt-0 mb-4 flex h-ev-2">
                 @for($i = 0; $i < count($benefits); $i++)
-                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-gray-200 w-2 h-2' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-info-7 w-6 h-2' : 'bg-gray-200 w-2 h-2' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
                 @endfor
             </div>
         </div>
@@ -92,7 +92,7 @@
         const updateBenefitsDots = (activeIndex) => {
             benefitsDots.forEach((dot, idx) => {
                 dot.className = idx === activeIndex 
-                    ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-6 h-2"
+                    ? "rounded-full transition-all duration-300 bg-info-7 w-6 h-2"
                     : "rounded-full transition-all duration-300 bg-gray-200 w-2 h-2";
             });
         };

@@ -65,7 +65,7 @@
                                         <img src="{{ asset('assets/icons/star-testimonial.svg') }}" alt="Star" class="w-5 h-5">
                                     @endfor
                                 </div>
-                                <a href="{{ $testi['video_link'] }}" class="flex items-center text-[#0d6efd] hover:text-blue-800 text-sm font-bold">
+                                <a href="{{ $testi['video_link'] }}" class="flex items-center text-info-7 hover:text-info-8 text-sm font-bold">
                                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
                                     </svg>
@@ -95,7 +95,7 @@
             <div id="testimonialCarouselDots" class="justify-center items-center gap-2 mt-2 mb-4 flex h-ev-2">
 
                 @for($i = 0; $i < count($testimonials) - 1; $i++)
-                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-6 h-2' : 'bg-primary-2 w-2 h-2 hover:bg-primary-3' }} {{ $i > (count($testimonials) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-info-7 w-6 h-2' : 'bg-primary-2 w-2 h-2 hover:bg-primary-3' }} {{ $i > (count($testimonials) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}" aria-label="Slide {{ $i + 1 }}"></button>
                 @endfor
             </div>
 
@@ -115,7 +115,7 @@
             testimonialTitikNavigasi.forEach((titik, idx) => {
                 const isActive = idx === indexAktif;
                 titik.className = isActive 
-                    ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-6 h-2"
+                    ? "rounded-full transition-all duration-300 bg-info-7 w-6 h-2"
                     : "rounded-full transition-all duration-300 bg-primary-2 w-2 h-2 hover:bg-primary-3";
                 
                 // Maintain the lg:hidden state from Blade
