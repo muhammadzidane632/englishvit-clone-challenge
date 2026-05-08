@@ -30,5 +30,8 @@
 
     {{-- FAQ section --}}
     @include('components.faq')
+
+    {{-- media coverage marquee --}}
+    @include('components.media-coverage')
    
 @endsection
