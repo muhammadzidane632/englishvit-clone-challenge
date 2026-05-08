@@ -194,14 +194,14 @@
             {{-- Pagination Navigation (Dots) --}}
             <div id="carouselDots" class="justify-center items-center gap-2 mt-4 mb-4 flex h-ev-2">
                 @for($i = 0; $i < count($recommendations); $i++)
-                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-[#0d6efd] w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }} {{ $i > (count($recommendations) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}"></button>
+                    <button class="rounded-full transition-all duration-300 {{ $i == 0 ? 'bg-info-7 w-8 h-2' : 'bg-gray-200 w-2 h-2 hover:bg-gray-300' }} {{ $i > (count($recommendations) - 4) ? 'lg:hidden' : '' }}" data-index="{{ $i }}"></button>
                 @endfor
             </div>
         </div>
 
         {{-- Footer Link: See All --}}
         <div class="text-center mt-4">
-            <a href="#" class="inline-flex items-center font-bold text-[#0d6efd] hover:text-blue-800 text-lg">
+            <a href="#" class="inline-flex items-center font-bold text-info-7 hover:text-info-8 text-lg">
                 Lihat semua kelas
                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -224,7 +224,7 @@
             titikNavigasi.forEach((titik, idx) => {
                 const isActive = idx === indexAktif;
                 titik.className = isActive 
-                    ? "rounded-full transition-all duration-300 bg-[#0d6efd] w-8 h-2"
+                    ? "rounded-full transition-all duration-300 bg-info-7 w-8 h-2"
                     : "rounded-full transition-all duration-300 bg-gray-200 w-2 h-2 hover:bg-gray-300";
                 
                 // Keep the lg:hidden state from Blade
