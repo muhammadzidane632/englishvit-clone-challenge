@@ -33,5 +33,8 @@
 
     {{-- media coverage marquee --}}
     @include('components.media-coverage')
+
+    {{-- cta admin --}}
+    @include('components.cta-admin')
    
 @endsection
