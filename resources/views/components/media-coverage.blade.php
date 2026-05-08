@@ -9,10 +9,10 @@
     ];
 @endphp
 
-<section class="py-12 md:py-16 bg-white overflow-hidden" id="media-coverage">
-    <div class="max-w-[1050px] mx-auto px-4 md:px-6">
+<section class="py-6 md:py-8 bg-white overflow-hidden" id="media-coverage">
+    <div class="max-w-[1140px] mx-auto px-4 md:px-6">
         {{-- Title --}}
-        <div class="text-center mb-8 md:mb-10">
+        <div class="text-center mb-6 md:mb-8">
             <h4 class="text-black-8 font-semibold text-lg md:text-xl">Telah diliput oleh:</h4>
         </div>
 
@@ -20,11 +20,11 @@
         <div class="relative flex w-full overflow-hidden">
             {{-- Loop twice for seamless scrolling --}}
             @for ($i = 0; $i < 2; $i++)
-                <div class="flex items-center min-w-max animate-[ev-marquee_25s_linear_infinite]" {!! $i === 1 ? 'aria-hidden="true"' : '' !!}>
+                <div class="flex items-center min-w-max animate-[ev-marquee_30s_linear_infinite]" {!! $i === 1 ? 'aria-hidden="true"' : '' !!}>
                     @foreach($mediaItems as $item)
-                        <div class="mx-5 md:mx-8 shrink-0">
-                            <a href="{{ $item['url'] }}" target="_blank" class="block grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                <img src="{{ asset('assets/images/sections/diliputi-sponsor/' . $item['image']) }}" alt="{{ $item['name'] }}" class="h-9 md:h-13 w-auto object-contain">
+                        <div class="mx-3 md:mx-6 shrink-0">
+                            <a href="{{ $item['url'] }}" target="_blank" class="block opacity-90 hover:opacity-100 transition-all duration-300">
+                                <img src="{{ asset('assets/images/sections/diliputi-sponsor/' . $item['image']) }}" alt="{{ $item['name'] }}" class="h-10 md:h-16 w-auto object-contain">
                             </a>
                         </div>
                     @endforeach
