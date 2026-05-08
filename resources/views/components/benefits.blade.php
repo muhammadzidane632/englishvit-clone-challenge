@@ -37,7 +37,7 @@
     <div class="container max-w-ev-container mx-auto px-4 md:px-6">
         
         {{-- Header --}}
-        <div class="text-center mb-10 md:mb-12 mt-4">
+        <div class="text-center mb-8 md:mb-10 mt-2">
             <h2 class="font-bold text-ev-h3 md:text-ev-h2 text-black-8 mb-3">
                 Why Englishvit?
             </h2>
@@ -47,9 +47,9 @@
         </div>
 
         {{-- Desktop Grid (Hidden on mobile) --}}
-        <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div class="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 items-stretch max-w-[1050px] mx-auto">
             @foreach($benefits as $benefit)
-                <div class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 px-6 py-8 text-center flex flex-col items-center hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 px-5 py-6 md:px-6 md:py-8 text-center flex flex-col items-center hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
                     <img src="{{ asset('assets/images/sections/benefits/' . $benefit['image']) }}" alt="{{ $benefit['title'] }}" class="h-24 w-auto object-contain mb-6">
                     <h4 class="font-bold text-[18px] md:text-ev-body-lg text-gray-900 mb-4">{{ $benefit['title'] }}</h4>
                     <p class="text-gray-600 text-ev-body-sm md:text-[15px] leading-relaxed">{!! $benefit['desc'] !!}</p>
