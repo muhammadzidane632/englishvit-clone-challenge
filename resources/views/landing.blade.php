@@ -21,5 +21,8 @@
 
     {{-- special promo --}}
     @include('components.promo')
+
+    {{-- why englishvit / benefits --}}
+    @include('components.benefits')
    
 @endsection
