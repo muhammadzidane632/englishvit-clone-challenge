@@ -31,7 +31,7 @@ Clone tampilan homepage [englishvit.com](https://englishvit.com) menggunakan Lar
 
 ### 1. Clone repository
 
-```bash
+```Bash
 git clone https://github.com/muhammadzidane632/englishvit-clone-challenge.git
 cd englishvit-clone-challenge
 ```
