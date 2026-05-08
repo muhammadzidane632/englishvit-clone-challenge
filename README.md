@@ -9,7 +9,7 @@ Clone tampilan homepage [englishvit.com](https://englishvit.com) menggunakan Lar
 | Layer | Teknologi |
 |---|---|
 | Backend Framework | Laravel 12.x |
-| Templating | Laravel Blade |
+| View | Laravel Blade |
 | CSS Framework | Tailwind CSS v4 |
 | Interaktivitas | Alpine.js v3 |
 | Build Tool | Vite 6.x |
