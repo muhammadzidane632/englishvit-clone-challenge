@@ -133,3 +133,12 @@
         display: none;
     }
 }
+
+@keyframes ev-marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100% - 0px));
+    }
+}
