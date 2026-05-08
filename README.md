@@ -42,7 +42,7 @@ cd englishvit-clone-challenge
 
 ```bash
 composer install
-    lalu 
+#    lalu 
 npm install
 ```
 
